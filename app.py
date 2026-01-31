@@ -21,7 +21,7 @@ DET_THRESH = 0.58 #score > 0.58 → keep  score < 0.58 → ignore
 
 
 # Recognition Settings
-RECOGNITION_THRESHOLD = 0.36
+RECOGNITION_THRESHOLD = 0.36 #distance < 0.36 → SAME PERSON ✅ distance > 0.36 → different ❌
 CONFIDENCE_DECAY = 0.95  # Confidence decays each frame without verification
 
 # Performance Settings - CONTINUOUS TARGET VALIDATION
