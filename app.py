@@ -17,7 +17,8 @@ CTX_ID = 0
 
 # Detection Settings - EXTREME CROWD MODE
 DET_SIZE = (640, 640)
-DET_THRESH = 0.58
+DET_THRESH = 0.58 #score > 0.58 → keep  score < 0.58 → ignore
+
 
 # Recognition Settings
 RECOGNITION_THRESHOLD = 0.36
