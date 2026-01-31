@@ -642,7 +642,7 @@ class ContinuousTrackingSystem:
         print("🎥 CONTINUOUS TRACKING MODE Active!")
         print("✅ Target will be re-validated every frame while moving")
         print("📊 Adaptive search: Zone scan → Local search → Continuous validation")
-        print("Controls: q=quit | s=save | r=reload | t=reset")
+        print("Controls: q=quit | s=save | r=reload | t=reset | c=change target")
         
         while True:
             ret, frame = cap.read()
@@ -676,6 +676,16 @@ class ContinuousTrackingSystem:
                 self.tracker = AdaptiveTargetTracker()
                 self.target_found = False
                 self.using_grid_scan = True
+            elif key == ord('c'):
+                print("🎯 Changing target...")
+                new_image = input("📂 New target image: ").strip()
+                if new_image and self.load_target(new_image):
+                    image_name = new_image
+                    self.tracker = AdaptiveTargetTracker()
+                    self.target_found = False
+                    self.using_grid_scan = True
+                else:
+                    print("⚠️  Target change failed.")
         
         cap.release()
         cv2.destroyAllWindows()
