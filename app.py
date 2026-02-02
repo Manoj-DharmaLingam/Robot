@@ -497,4 +497,4 @@ class OptimizedFaceTracker:
 
 if __name__ == "__main__":
     tracker = OptimizedFaceTracker()
-    tracker.run()
+    tracker.run()   
